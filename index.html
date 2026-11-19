@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Shopping</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background-color: white;
+            padding: 15px;
+            width: 220px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px gray;
+        }
+
+        .product img {
+            width: 180px;
+            height: 180px;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Online Shopping Store</h1>
+
+    <h2>Available Products</h2>
+
+    <div class="products">
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=300&q=80">
+            <h3>Headphones</h3>
+            <p>Price: ₹1,500</p>
+            <button onclick="addToCart('Headphones')">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=300&q=80">
+            <h3>Watch</h3>
+            <p>Price: ₹2,000</p>
+            <button onclick="addToCart('Watch')">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=300&q=80">
+            <h3>Shoes</h3>
+            <p>Price: ₹3,000</p>
+            <button onclick="addToCart('Shoes')">Add to Cart</button>
+        </div>
+
+    </div>
+
+    <h2>Shopping Cart</h2>
+
+    <p id="cart">No products added</p>
+
+    <script>
+        let cart = [];
+
+        function addToCart(product) {
+            cart.push(product);
+
+            document.getElementById("cart").innerHTML =
+                cart.join(", ");
+
+            alert(product + " added to cart!");
+        }
+    </script>
+
+</body>
+</html>
